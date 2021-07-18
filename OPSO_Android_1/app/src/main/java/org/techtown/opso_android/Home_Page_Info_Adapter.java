@@ -1,25 +1,30 @@
 package org.techtown.opso_android;
 
-import android.app.Activity;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
-import android.os.Build;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_Adapter.ViewHolder> {
     private ArrayList<Home_Page_Info> items;
+    private LayoutInflater mInflate;
+    private Context mContext;
 
-    public Home_Page_Info_Adapter(ArrayList<Home_Page_Info> items) {
+
+    public Home_Page_Info_Adapter(Context context, ArrayList<Home_Page_Info> items) {
+        this.mContext = context;
+        this.mInflate = LayoutInflater.from(context);
         this.items = items;
     }
 
@@ -33,9 +38,22 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Home_Page_Info item = items.get(position);
-        viewHolder.setItem(item);
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
+
+        String url = items.get(position).picture;
+        Glide.with(viewHolder.itemView.getContext())
+                .load(url)
+                .into(viewHolder.picture);
+
+        viewHolder.name.setText(items.get(position).name);
+        viewHolder.classNum.setText(items.get(position).classNum);
+        viewHolder.cmt_classNum.setText(items.get(position).cmt_classNum);
+        viewHolder.name.setText(items.get(position).name);
+        viewHolder.contents.setText(items.get(position).contents);
+        viewHolder.date.setText(items.get(position).date);
+        viewHolder.hash.setText(items.get(position).hash);
+        viewHolder.cmt_name.setText(items.get(position).cmt_name);
+        viewHolder.cmt_contents.setText(items.get(position).cmt_contents);
     }
 
     @Override
@@ -47,11 +65,11 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
         TextView date;
         TextView classNum;
         ImageView picture;
-        Button name;
+        TextView name;
         TextView contents;
         TextView hash;
 
-        Button cmt_name;
+        TextView cmt_name;
         TextView cmt_contents;
         TextView cmt_classNum;
 
@@ -59,51 +77,20 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
         public ViewHolder(View itemView) {
             super(itemView);
 
-            classNum = itemView.findViewById(R.id.classNum);
-            date = itemView.findViewById(R.id.date);
-            picture = itemView.findViewById(R.id.picture);
-            name = itemView.findViewById(R.id.name);
-            contents = itemView.findViewById(R.id.contents);
-            hash = itemView.findViewById(R.id.hash);
+            classNum = (TextView)itemView.findViewById(R.id.classNum);
+            date = (TextView)itemView.findViewById(R.id.date);
+            picture = (ImageView)itemView.findViewById(R.id.picture);
+            name = (TextView)itemView.findViewById(R.id.name);
+            contents = (TextView)itemView.findViewById(R.id.contents);
+            hash = (TextView)itemView.findViewById(R.id.hash);
 
-            cmt_name = itemView.findViewById(R.id.cmt_name);
-            cmt_contents = itemView.findViewById(R.id.cmt_contents);
-            cmt_classNum = itemView.findViewById(R.id.cmt_classNum);
+            cmt_name = (TextView)itemView.findViewById(R.id.cmt_name);
+            cmt_contents = (TextView)itemView.findViewById(R.id.cmt_contents);
+            cmt_classNum = (TextView)itemView.findViewById(R.id.cmt_classNum);
 
 
         }
 
-        public void setItem(Home_Page_Info item) {
-            classNum.setText(item.getClassNum());
-            date.setText(item.getDate());
-            name.setText(item.getName());
-            contents.setText(item.getContents());
-            hash.setText(item.getHash());
 
-            cmt_name.setText(item.getCmt_name());
-            cmt_contents.setText(item.getCmt_contents());
-            cmt_classNum.setText(item.getCmt_classNum());
-
-            picture.setBackground(new ShapeDrawable(new OvalShape()));
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                picture.setClipToOutline(true);
-            }
-        }
-    }
-
-    public void addItem(Home_Page_Info item) {
-        items.add(item);
-    }
-
-    public void setItems(ArrayList<Home_Page_Info> items) {
-        this.items = items;
-    }
-
-    public Home_Page_Info getItem(int position) {
-        return items.get(position);
-    }
-
-    public void setItem(int position, Home_Page_Info item) {
-        items.set(position, item);
     }
 }
