@@ -4,17 +4,17 @@ package org.techtown.opso_android;
 public class Home_Page_Info {
     String date;
 
-    int classNum;
-    int picture;
+    String classNum;
+    String picture;
     String name;
     String hash;
     String contents;
 
-    int cmt_classNum;
+    String cmt_classNum;
     String cmt_name;
     String cmt_contents;
 
-    public Home_Page_Info(String date, int classNum, int picture, String name, String hash, int cmt_classNum, String cmt_name, String contents, String cmt_contents) {
+    public Home_Page_Info(String date, String classNum, String picture, String name, String hash, String cmt_classNum, String cmt_name, String contents, String cmt_contents) {
         this.date = date;
         this.classNum = classNum;
         this.picture = picture;
@@ -35,20 +35,20 @@ public class Home_Page_Info {
     }
 
 
-    public int getClassNum() {
+    public String getClassNum() {
         return classNum;
     }
 
-    public void setClassNum(int classNum) {
+    public void setClassNum(String classNum) {
         this.classNum = classNum;
     }
 
 
-    public int getPicture() {
+    public String getPicture() {
         return picture;
     }
 
-    public void setPicture(int picture) {
+    public void setPicture(String picture) {
         this.picture = picture;
     }
 
@@ -71,11 +71,11 @@ public class Home_Page_Info {
     }
 
 
-    public int getCmt_classNum() {
+    public String getCmt_classNum() {
         return cmt_classNum;
     }
 
-    public void setCmt_classNum(int cmt_classNum) {
+    public void setCmt_classNum(String cmt_classNum) {
         this.cmt_classNum = cmt_classNum;
     }
 
