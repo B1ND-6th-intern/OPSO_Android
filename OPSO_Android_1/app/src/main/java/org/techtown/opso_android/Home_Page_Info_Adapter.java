@@ -1,6 +1,9 @@
 package org.techtown.opso_android;
 
 import android.content.Context;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
-
-import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_Adapter.ViewHolder> {
     private ArrayList<Home_Page_Info> items;
@@ -40,10 +39,8 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
 
-        String url = items.get(position).picture;
-        Glide.with(viewHolder.itemView.getContext())
-                .load(url)
-                .into(viewHolder.picture);
+
+        viewHolder.picture.setImageDrawable(items.get(position).picture);
 
         viewHolder.name.setText(items.get(position).name);
         viewHolder.classNum.setText(items.get(position).classNum);
@@ -87,6 +84,10 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
             cmt_name = (TextView)itemView.findViewById(R.id.cmt_name);
             cmt_contents = (TextView)itemView.findViewById(R.id.cmt_contents);
             cmt_classNum = (TextView)itemView.findViewById(R.id.cmt_classNum);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                picture.setBackground(new ShapeDrawable(new OvalShape()));
+                picture.setClipToOutline(true);
+            }
 
 
         }
