@@ -1,11 +1,13 @@
 package org.techtown.opso_android;
 
 
+import android.graphics.drawable.Drawable;
+
 public class Home_Page_Info {
     String date;
 
     String classNum;
-    String picture;
+    Drawable picture;
     String name;
     String hash;
     String contents;
@@ -14,7 +16,7 @@ public class Home_Page_Info {
     String cmt_name;
     String cmt_contents;
 
-    public Home_Page_Info(String date, String classNum, String picture, String name, String hash, String cmt_classNum, String cmt_name, String contents, String cmt_contents) {
+    public Home_Page_Info(String date, String classNum, Drawable picture, String name, String hash, String cmt_classNum, String cmt_name, String contents, String cmt_contents) {
         this.date = date;
         this.classNum = classNum;
         this.picture = picture;
@@ -44,11 +46,11 @@ public class Home_Page_Info {
     }
 
 
-    public String getPicture() {
+    public Drawable getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
+    public void setPicture(Drawable picture) {
         this.picture = picture;
     }
 
