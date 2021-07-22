@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@drawable/shadow_bottom_version">
+    android:orientation="vertical">
 
 
         <LinearLayout
@@ -35,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/date"
-                    android:text="2021 - 07 - 18"
+                    android:text=" 2021 - 07 - 18"
                     android:textColor="#402597"
                     android:textSize="13sp" />
                 <LinearLayout
@@ -192,5 +191,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="#B9B9B9" />
     </LinearLayout>
 </LinearLayout>
