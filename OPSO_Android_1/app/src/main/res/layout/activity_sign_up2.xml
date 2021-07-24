@@ -51,7 +51,7 @@
 
     <EditText
         android:id="@+id/sign_up_email"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/login_edittext"
@@ -59,8 +59,22 @@
         android:ems="10"
         android:hint="이메일"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_id" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cerEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="32dp"
+        android:text="인증"
+        android:textSize="17sp"
+        android:background="@drawable/button_design"
+        app:layout_constraintStart_toEndOf="@+id/sign_up_email"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_id" />
 
     <EditText
