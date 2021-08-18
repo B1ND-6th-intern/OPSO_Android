@@ -3,18 +3,16 @@ package org.techtown.opso_android;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.Toast;
-
+import android.widget.ImageButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageButton btn_bell;
     Home home;
     Search search;
     Info info;
@@ -24,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Sign_in_Spinner();
 
         // Bottom Navigation
         home = new Home();
@@ -54,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        btn_bell = findViewById(R.id.btn_bell);
+        btn_bell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goAlarmIntent = new Intent(getApplicationContext(), AlarmActivity.class);
+                startActivity(goAlarmIntent);
+            }
+        });
     }
 
 }

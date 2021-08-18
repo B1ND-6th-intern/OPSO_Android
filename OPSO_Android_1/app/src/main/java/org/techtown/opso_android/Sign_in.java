@@ -24,8 +24,8 @@ public class Sign_in extends AppCompatActivity {
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotoUp1formIn = new Intent(getApplicationContext(), SignUp1.class);
-                startActivity(gotoUp1formIn);
+                Intent gotoUp1fromIn = new Intent(getApplicationContext(), SignUp1.class);
+                startActivity(gotoUp1fromIn);
             }
         });
 
@@ -34,6 +34,7 @@ public class Sign_in extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gotoMain = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(gotoMain);
+                finish();
             }
         });
     }

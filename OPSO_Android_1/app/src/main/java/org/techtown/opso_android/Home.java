@@ -1,7 +1,6 @@
 package org.techtown.opso_android;
 
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,7 +34,7 @@ public class Home extends Fragment {
 
 
         Context context = view.getContext();
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.home_recycler);
+        RecyclerView recyclerView = view.findViewById(R.id.home_recycler);
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
@@ -50,7 +49,7 @@ public class Home extends Fragment {
     }
 
     private void initDataset() {
-        //for Test
+        // TODO : 테스트코드니 나중에 바꿔주세
         items.clear();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             items.add(new Home_Page_Info("2021 - 07 - 19", "1320", getResources().getDrawable(R.drawable.test, null), "최민재", "#C", "1319", "이경태", "아니 이거 너무 길어져서 어카지 코드가 이 사발 너무 길어서 머리가 아파", "그러게 좀 짧게 짜짘ㅋ"));

@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class SignUp1 extends AppCompatActivity {
 
     Button btn_Goto_SignUp2;
-    ImageButton btn_Sign_In_Back;
+
 
     String[] spin_grade = { "1학년", "2학년", "3학년" };
     String[] spin_class = { "1반", "2반", "3반" };
@@ -27,7 +27,6 @@ public class SignUp1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up1);
 
-        btn_Sign_In_Back = findViewById(R.id.btn_Sign_In_Back);
         btn_Goto_SignUp2 = findViewById(R.id.btn_Goto_SignUp2);
         btn_Goto_SignUp2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,14 +35,6 @@ public class SignUp1 extends AppCompatActivity {
                 startActivity(gotoSignUp2Intent);
             }
         });
-        btn_Sign_In_Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gotoInFromUp1 = new Intent(getApplicationContext(), Sign_in.class);
-                startActivity(gotoInFromUp1);
-            }
-        });
-
         Setting_Spinner();
 
     }

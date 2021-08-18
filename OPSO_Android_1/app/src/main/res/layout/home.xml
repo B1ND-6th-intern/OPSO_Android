@@ -8,6 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_recycler"
+        tools:listitem="@layout/home_page_item"
+        tools:itemCount="2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
