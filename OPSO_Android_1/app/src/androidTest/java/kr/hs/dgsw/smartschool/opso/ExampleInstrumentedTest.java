@@ -1,4 +1,4 @@
-package org.techtown.opso_android;
+package kr.hs.dgsw.smartschool.opso;
 
 import android.content.Context;
 
