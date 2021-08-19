@@ -1,4 +1,4 @@
-package org.techtown.opso_android;
+package kr.hs.dgsw.smartschool.opso;
 
 
 import android.content.Context;
@@ -9,26 +9,27 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.techtown.opso_android.R;
+
 import java.util.ArrayList;
 
 //메인 페이지 인플레이션
-public class Home extends Fragment {
+public class HomeFragment extends Fragment {
 
     private ArrayList<Home_Page_Info> items = new ArrayList<>();
 
-    public Home() {
+    public HomeFragment() {
         // Required empty public constructor
     }
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         initDataset();
 
@@ -49,7 +50,7 @@ public class Home extends Fragment {
     }
 
     private void initDataset() {
-        // TODO : 테스트코드니 나중에 바꿔주세
+        // TODO : 테스트코드니 나중에 바꿔주세요
         items.clear();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             items.add(new Home_Page_Info("2021 - 07 - 19", "1320", getResources().getDrawable(R.drawable.test, null), "최민재", "#C", "1319", "이경태", "아니 이거 너무 길어져서 어카지 코드가 이 사발 너무 길어서 머리가 아파", "그러게 좀 짧게 짜짘ㅋ"));

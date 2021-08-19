@@ -1,4 +1,4 @@
-package org.techtown.opso_android;
+package kr.hs.dgsw.smartschool.opso;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-public class Search extends Fragment {
+import org.techtown.opso_android.R;
+
+public class SearchFragment extends Fragment {
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

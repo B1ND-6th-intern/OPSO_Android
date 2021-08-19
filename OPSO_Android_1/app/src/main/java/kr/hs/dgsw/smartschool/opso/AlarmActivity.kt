@@ -1,7 +1,8 @@
-package org.techtown.opso_android
+package kr.hs.dgsw.smartschool.opso
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.techtown.opso_android.R
 
 class AlarmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

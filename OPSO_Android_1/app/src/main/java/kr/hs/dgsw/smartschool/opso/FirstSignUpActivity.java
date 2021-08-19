@@ -1,4 +1,4 @@
-package org.techtown.opso_android;
+package kr.hs.dgsw.smartschool.opso;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class SignUp1 extends AppCompatActivity {
+import org.techtown.opso_android.R;
+
+public class FirstSignUpActivity extends AppCompatActivity {
 
     Button btn_Goto_SignUp2;
 
@@ -25,13 +26,13 @@ public class SignUp1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up1);
+        setContentView(R.layout.activity_first_sign_up);
 
         btn_Goto_SignUp2 = findViewById(R.id.btn_Goto_SignUp2);
         btn_Goto_SignUp2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotoSignUp2Intent = new Intent(getApplicationContext(), SignUp2.class);
+                Intent gotoSignUp2Intent = new Intent(getApplicationContext(), SecondSignUpActivity.class);
                 startActivity(gotoSignUp2Intent);
             }
         });
@@ -68,34 +69,34 @@ public class SignUp1 extends AppCompatActivity {
         spinner_grade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(SignUp1.this, "학년 : " + spin_grade[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstSignUpActivity.this, "학년 : " + spin_grade[position], Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(SignUp1.this, "아무것도 선택되지 않음", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstSignUpActivity.this, "아무것도 선택되지 않음", Toast.LENGTH_SHORT).show();
             }
         });
         spinner_class.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(SignUp1.this, "반 : " + spin_class[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstSignUpActivity.this, "반 : " + spin_class[position], Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(SignUp1.this, "아무것도 선택되지 않음", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstSignUpActivity.this, "아무것도 선택되지 않음", Toast.LENGTH_SHORT).show();
             }
         });
         spinner_number.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(SignUp1.this, "번호 : " + spin_number[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstSignUpActivity.this, "번호 : " + spin_number[position], Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(SignUp1.this, "아무것도 선택되지 않음", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstSignUpActivity.this, "아무것도 선택되지 않음", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,4 +1,4 @@
-package org.techtown.opso_android;
+package kr.hs.dgsw.smartschool.opso;
 
 import android.content.Context;
 import android.graphics.drawable.ShapeDrawable;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.techtown.opso_android.R;
 
 import java.util.ArrayList;
 
