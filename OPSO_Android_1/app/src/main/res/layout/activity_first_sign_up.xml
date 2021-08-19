@@ -4,106 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp2">
-
-    <ImageButton
-        android:id="@+id/btn_Sign_Up1_Back"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="15dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:padding="0dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/btn_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context="kr.hs.dgsw.smartschool.opso.FirstSignUpActivity">
 
     <Button
-        android:id="@+id/btn_SignUp"
+        android:id="@+id/btn_Goto_SignUp2"
         android:layout_width="110dp"
         android:layout_height="55dp"
         android:backgroundTint="@color/main_color"
-        android:text="회원가입"
+        android:text="다음"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_Cpw"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_number"
         app:layout_constraintVertical_bias="0.435" />
 
     <EditText
-        android:id="@+id/sign_up_id"
+        android:id="@+id/sign_up_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/login_edittext"
         android:elevation="15dp"
         android:ems="10"
-        android:hint="아이디"
+        android:hint="이름"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-    <EditText
-        android:id="@+id/sign_up_email"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/login_edittext"
-        android:elevation="15dp"
-        android:ems="10"
-        android:hint="이메일"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.204"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_id" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_cerEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="32dp"
-        android:text="인증"
-        android:textSize="17sp"
-        android:background="@drawable/button_design"
-        app:layout_constraintStart_toEndOf="@+id/sign_up_email"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_id" />
-
-    <EditText
-        android:id="@+id/sign_up_pw"
+    <Spinner
+        android:id="@+id/spinner_grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+
         android:background="@drawable/login_edittext"
-        android:elevation="15dp"
-        android:ems="10"
-        android:hint="비밀번호"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_email" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_name" />
 
-    <EditText
-        android:id="@+id/sign_up_Cpw"
+    <Spinner
+        android:id="@+id/spinner_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginTop="32dp"
         android:background="@drawable/login_edittext"
-        android:elevation="15dp"
-        android:ems="10"
-        android:hint="비밀번호 확인"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_pw" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_grade" />
+
+    <Spinner
+        android:id="@+id/spinner_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+        android:background="@drawable/login_edittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_class" />
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -124,8 +90,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_SignUp"
-        app:srcCompat="@drawable/circular2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Goto_SignUp2"
+        app:srcCompat="@drawable/circular1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package org.techtown.opso_android;
+package kr.hs.dgsw.smartschool.opso;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Sign_in extends AppCompatActivity {
+import org.techtown.opso_android.R;
+
+public class SignInActivity extends AppCompatActivity {
 
     TextView btn_sign_up;
     Button btn_login;
@@ -24,8 +26,8 @@ public class Sign_in extends AppCompatActivity {
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotoUp1formIn = new Intent(getApplicationContext(), SignUp1.class);
-                startActivity(gotoUp1formIn);
+                Intent gotoUp1fromIn = new Intent(getApplicationContext(), FirstSignUpActivity.class);
+                startActivity(gotoUp1fromIn);
             }
         });
 
@@ -34,6 +36,7 @@ public class Sign_in extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gotoMain = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(gotoMain);
+                finish();
             }
         });
     }

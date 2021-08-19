@@ -1,4 +1,4 @@
-package org.techtown.opso_android;
+package kr.hs.dgsw.smartschool.opso;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,9 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
-public class Info extends Fragment {
+import org.techtown.opso_android.R;
+
+public class InfoFragment extends Fragment {
 
     Button gotoSignUp;
 
@@ -23,7 +25,7 @@ public class Info extends Fragment {
         gotoSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gsuIntent = new Intent(getActivity(), Sign_in.class);
+                Intent gsuIntent = new Intent(getActivity(), SignInActivity.class);
                 startActivity(gsuIntent);
             }
         });

@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OPSO_Android">
-        <activity android:name=".Sign_in"></activity>
-        <activity android:name=".SignUp2" />
-        <activity android:name=".SignUp1" />
-        <activity android:name=".MainActivity">
+        <activity android:name="kr.hs.dgsw.smartschool.opso.AlarmActivity"></activity>
+        <activity android:name="kr.hs.dgsw.smartschool.opso.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="kr.hs.dgsw.smartschool.opso.SecondSignUpActivity" />
+        <activity android:name="kr.hs.dgsw.smartschool.opso.FirstSignUpActivity" />
+        <activity android:name="kr.hs.dgsw.smartschool.opso.MainActivity" />
     </application>
 
 </manifest>
