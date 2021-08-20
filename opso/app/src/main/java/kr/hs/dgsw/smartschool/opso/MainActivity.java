@@ -3,8 +3,10 @@ package kr.hs.dgsw.smartschool.opso;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -13,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     HomeFragment home;
     SearchFragment search;
     InfoFragment info;
+
+    ImageButton btn_bell;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,24 +34,26 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottemNavigaion = findViewById(R.id.bottom_navigation);
         bottemNavigaion.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.home:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.container, home).commit();
-                                return true;
-                            case R.id.search:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.container, search).commit();
-                                return true;
-                            case R.id.info:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.container, info).commit();
-                                return true;
-                        }
-
-                        return false;
+                item -> {
+                    switch (item.getItemId()) {
+                        case R.id.home:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.container, home).commit();
+                            return true;
+                        case R.id.search:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.container, search).commit();
+                            return true;
+                        case R.id.info:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.container, info).commit();
+                            return true;
                     }
+
+                    return false;
                 }
         );
+        btn_bell = findViewById(R.id.btn_bell);
+        btn_bell.setOnClickListener(view -> {
+            Intent goAlarm = new Intent(getApplicationContext(), AlarmActivity.class);
+            startActivity(goAlarm);
+        });
     }
 }

@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:background="@drawable/login_edittext"
+        android:maxLength="10"
         android:ems="10"
         android:hint="아이디"
         android:elevation="15dp"
