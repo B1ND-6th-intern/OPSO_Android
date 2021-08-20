@@ -29,30 +29,22 @@ public class FirstSignUpActivity extends AppCompatActivity {
 
         btn_Sign_In_Back = findViewById(R.id.btn_Sign_In_Back);
         btn_Goto_SignUp2 = findViewById(R.id.btn_Goto_SignUp2);
-        btn_Goto_SignUp2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gotoSignUp2Intent = new Intent(getApplicationContext(), SecondSignUpActivity.class);
-                startActivity(gotoSignUp2Intent);
-            }
+        btn_Goto_SignUp2.setOnClickListener(v -> {
+            Intent gotoSignUp2Intent = new Intent(getApplicationContext(), SecondSignUpActivity.class);
+            startActivity(gotoSignUp2Intent);
         });
-        btn_Sign_In_Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gotoInFromUp1 = new Intent(getApplicationContext(), SignInActivity.class);
-                startActivity(gotoInFromUp1);
-            }
-        });
+        btn_Sign_In_Back.setOnClickListener(v -> finish());
 
         Setting_Spinner();
 
     }
 
     private void Setting_Spinner() {
+        // TODO : Toast 메시지는 바꿔야 합니당.
         //Spinner
         //grade
         Spinner spinner_grade = findViewById(R.id.spinner_grade);
-        ArrayAdapter<String> adapter_grade = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spin_grade);
+        ArrayAdapter<String> adapter_grade = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spin_grade);
 
         adapter_grade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -60,7 +52,7 @@ public class FirstSignUpActivity extends AppCompatActivity {
 
         //class
         Spinner spinner_class = findViewById(R.id.spinner_class);
-        ArrayAdapter<String> adapter_class = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spin_class);
+        ArrayAdapter<String> adapter_class = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spin_class);
 
         adapter_class.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -68,7 +60,7 @@ public class FirstSignUpActivity extends AppCompatActivity {
 
         //number
         Spinner spinner_number = findViewById(R.id.spinner_number);
-        ArrayAdapter<String> adapter_number = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spin_number);
+        ArrayAdapter<String> adapter_number = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spin_number);
 
         adapter_number.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 

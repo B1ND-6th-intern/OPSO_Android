@@ -24,27 +24,14 @@ public class SecondSignUpActivity extends AppCompatActivity {
         btn_Sign_Up1_Back = findViewById(R.id.btn_Sign_Up1_Back);
         btn_SignUp = findViewById(R.id.btn_SignUp);
         
-        btn_SignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gotoSignIn = new Intent(getApplicationContext(), SignInActivity.class);
-                startActivity(gotoSignIn);
-            }
+        btn_SignUp.setOnClickListener(v -> {
+            Intent gotoSignIn = new Intent(getApplicationContext(), SignInActivity.class);
+            startActivity(gotoSignIn);
         });
 
-        btn_Sign_Up1_Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gotoSignUp1Intent = new Intent(getApplicationContext(), FirstSignUpActivity.class);
-                startActivity(gotoSignUp1Intent);
-            }
-        });
-        
-        btn_cerEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(SecondSignUpActivity.this, "이메일 인증 입니다!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        btn_Sign_Up1_Back.setOnClickListener(v -> finish());
+
+        // TODO : 테스트 입니다
+        btn_cerEmail.setOnClickListener(v -> Toast.makeText(SecondSignUpActivity.this, "이메일 인증 입니다!", Toast.LENGTH_SHORT).show());
     }
 }

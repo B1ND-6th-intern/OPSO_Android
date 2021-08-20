@@ -11,21 +11,20 @@ import androidx.fragment.app.Fragment;
 
 public class InfoFragment extends Fragment {
 
-    Button gotoSignUp;
+    Button btn_logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_info, container, false);
 
-        gotoSignUp = v.findViewById(R.id.gotoSignUp);
+        btn_logout = v.findViewById(R.id.btn_logout);
 
-        gotoSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gsuIntent = new Intent(getActivity(), SignInActivity.class);
-                startActivity(gsuIntent);
-            }
+        btn_logout.setOnClickListener(v1 -> {
+
+            Intent LogoutIntent = new Intent(getActivity(), SignInActivity.class);
+            startActivity(LogoutIntent);
+            getActivity().finish();
         });
 
         return v;
