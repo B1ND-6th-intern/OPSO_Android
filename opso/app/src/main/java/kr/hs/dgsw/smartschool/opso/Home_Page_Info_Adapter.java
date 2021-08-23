@@ -7,6 +7,7 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,10 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+
 public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_Adapter.ViewHolder> {
     private ArrayList<Home_Page_Info> items;
     private LayoutInflater mInflate;
     private Context mContext;
+
+    int LIGHTBUTTON = 0;
 
 
     public Home_Page_Info_Adapter(Context context, ArrayList<Home_Page_Info> items) {
@@ -39,7 +43,6 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
 
-
         viewHolder.picture.setImageDrawable(items.get(position).picture);
 
         viewHolder.name.setText(items.get(position).name);
@@ -51,6 +54,17 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
         viewHolder.hash.setText(items.get(position).hash);
         viewHolder.cmt_name.setText(items.get(position).cmt_name);
         viewHolder.cmt_contents.setText(items.get(position).cmt_contents);
+
+        viewHolder.btn_light.setOnClickListener(v -> {
+            if(LIGHTBUTTON == 0) {
+                viewHolder.btn_light.setImageResource(R.drawable.btn_lightbulb);
+                LIGHTBUTTON = 1;
+            }
+            else {
+                viewHolder.btn_light.setImageResource(R.drawable.btn_light);
+                LIGHTBUTTON = 0;
+            }
+        });
     }
 
     @Override
@@ -69,6 +83,7 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
         TextView cmt_name;
         TextView cmt_contents;
         TextView cmt_classNum;
+        ImageButton btn_light;
 
 
         public ViewHolder(View itemView) {
@@ -80,6 +95,7 @@ public class Home_Page_Info_Adapter extends RecyclerView.Adapter<Home_Page_Info_
             name = (TextView)itemView.findViewById(R.id.name);
             contents = (TextView)itemView.findViewById(R.id.contents);
             hash = (TextView)itemView.findViewById(R.id.hash);
+            btn_light = (ImageButton)itemView.findViewById(R.id.btn_light);
 
             cmt_name = (TextView)itemView.findViewById(R.id.cmt_name);
             cmt_contents = (TextView)itemView.findViewById(R.id.cmt_contents);
